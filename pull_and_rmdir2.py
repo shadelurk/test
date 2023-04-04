@@ -1,17 +1,29 @@
 import git
+from git import Repo
 import os
 import shutil
 
-GIT_URL = 'https://github.com/shadelurk/mdouttest.git'
-GIT_TOKEN = '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'
-REPOSITORY_PATH = 'mdouttest'
+GIT_REPOSITORY = 'https://github.com/PlatinumGames-Inc/055-master-data.git'
 OUTPUT_PATH = '055-master-data/master/p1/sheet_work/'
+REPOSITORY_PATH = 'mdouttest'
 
+full_local_path = "mdouttest"
+username = "shadelurk"
+password = "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"
+remote = f"https://{os.environ['GIT_USERNAME']}:{os.environ['GIT_PASSWORD']}@github.com/shadelurk/mdouttest.git"
+
+print('debug 1')
 if os.path.exists(REPOSITORY_PATH) != True:
-    git.Repo.clone_from(GIT_URL, OUTPUT_PATH, branch='main', depth=1, auth=git.auth.HttpGitAuth('token', GIT_TOKEN))
+    print('debug 2')
+    Repo.clone_from(remote,full_local_path)
 
-g = git.cmd.Git(REPOSITORY_PATH)
+print('debug 3')
+
+g = git.cmd.Git(full_local_path)
 g.pull()
 
+print('debug 4')
 shutil.rmtree(OUTPUT_PATH)
 os.makedirs(OUTPUT_PATH, exist_ok=True)
+
+
