@@ -8,8 +8,6 @@ REPOSITORY_PATH = 'mdouttest'
 
 credentials = os.environ['GIT_CREDENTIALS']
 
-# リポジトリをクローン
-
 if os.path.exists(REPOSITORY_PATH) != True:
     git.Repo.clone_from(
         GIT_REPOSITORY, 
