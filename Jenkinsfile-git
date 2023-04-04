@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        withCredentials([gitUsernamePassword(credentialsId: 'git_cred', variable: 'GIT_CREDENTIALS')]) {
+        withCredentials([string(credentialsId: 'git_cred', variable: 'GIT_CREDENTIALS')]) {
           sh 'python pull_and_rmdir2.py'
         }
       }
