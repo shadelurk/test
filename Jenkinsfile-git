@@ -1,0 +1,10 @@
+pipeline {
+  agent { dockerfile true }
+  stages {
+    stage('Test') {
+      withCredentials([gitUsernamePassword(credentialsId: 'git_cred', gitToolName: 'git-tool')]) {
+        sh 'python pull_and_rmdir2.py'
+      }
+    }
+  }
+}
