@@ -8,10 +8,6 @@ OUTPUT_PATH = '055-master-data/master/p1/sheet_work/'
 REPOSITORY_PATH = 'mdouttest'
 
 full_local_path = "mdouttest"
-username = "shadelurk"
-password = "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"
-print(os.environ['GIT_USERNAME'])
-print(os.environ['GIT_PASSWORD'])
 remote = f"https://{os.environ['GIT_USERNAME']}:{os.environ['GIT_PASSWORD']}@github.com/shadelurk/mdouttest.git"
 
 print('debug 1')
