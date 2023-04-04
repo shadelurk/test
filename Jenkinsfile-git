@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        withCredentials([gitUsernamePassword(credentialsId: 'git_cred', gitToolName: 'git-tool')]) {
-          sh 'git clone https://github.com/shadelurk/mdouttest.git'
-          sh 'rm -r mdouttest'
+        withCredentials([gitUsernamePassword(credentialsId: 'git_cred', variable: 'GIT_CREDENTIALS')]) {
           sh 'python pull_and_rmdir2.py'
         }
       }
