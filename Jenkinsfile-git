@@ -11,7 +11,7 @@ pipeline {
           sh 'python sheet_work_download2.py ${MY_TOKEN}'
           sh 'cd 055-master-data/master/p1/sheet_work'
           sh 'git add -A'
-          sh 'git commit -m GAS auto commit'
+          sh 'git commit -m "GAS auto commit"'
           sh 'git push origin main'
         }
       }
