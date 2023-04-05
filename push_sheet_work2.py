@@ -7,12 +7,10 @@ REPOSITORY_PATH = '055-master-data'
 
 os.chdir(REPOSITORY_PATH)
 repo = git.Repo()
-repo.config_writer().set_value('user', 'name', 'prj055')
-repo.config_writer().set_value('user', 'email', 'prj055_appsheet@platinumgames.co.jp')
-repo.config_writer().write()
+credentials = os.environ['GIT_CREDENTIALS']
 o = repo.remotes.origin
 o.pull()
 repo.git.add('--all')
 repo.git.commit('.','-m','\"GAS auto commit\"')
 origin = repo.remote(name='origin')
-origin.push()
+origin.push(credentials)

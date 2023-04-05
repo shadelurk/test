@@ -9,7 +9,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
           sh 'python pull_and_rmdir2.py'
           sh 'python sheet_work_download2.py ${MY_TOKEN}'
-          sh 'python push_sheet_work2.py'
+          sh "export GIT_CREDENTIALS=$GIT_USERNAME:$GIT_PASSWORD && python push_sheet_work2.py"
         }
       }
     }
