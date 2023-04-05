@@ -20,7 +20,9 @@ def main():
     drive = None
     creds = None
     num = len(sys.argv)
-    if num < 1:
+    print(sys.argv[0])
+    print(sys.argv[1])
+    if num < 2:
         print("error need parameter ex: python sheet_work_download.py ${MY_TOKEN}")
     else:
         creds = Credentials.from_authorized_user_file(sys.argv[1], SCOPES)

@@ -1,5 +1,8 @@
 pipeline {
   agent { dockerfile true }
+  environment {
+      MY_TOKEN = credentials('TOKEN')
+  }
   stages {
     stage('Test') {
       steps {
