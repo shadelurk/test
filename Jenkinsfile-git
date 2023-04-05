@@ -5,6 +5,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
           sh 'python pull_and_rmdir2.py'
+          sh 'python sheet_work_download2.py ${MY_TOKEN}'
         }
       }
     }

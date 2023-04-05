@@ -19,7 +19,7 @@ def main():
     num = len(sys.argv)
     count = 2
     if num < count + 1:
-        print("error need parameter ex: python3 reconstruct_before.py 1.2.0 addTest date web version parameter")
+        print("error need parameter ex: python reconstruct_after.py ${MY_TOKEN} addTest date web version parameter")
     else:
         creds = Credentials.from_authorized_user_file(sys.argv[1], SCOPES)
     if not creds.valid:
