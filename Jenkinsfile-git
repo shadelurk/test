@@ -7,7 +7,7 @@ pipeline {
     stage('Test') {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-          sh "export GIT_CREDENTIALS=$GIT_USERNAME:$GIT_PASSWORD && python push_sheet_work2.py"
+          sh 'python push_sheet_work2.py'
         }
       }
     }

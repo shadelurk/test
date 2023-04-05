@@ -12,5 +12,4 @@ o = repo.remotes.origin
 o.pull()
 repo.git.add('--all')
 repo.git.commit('.','-m','\"GAS auto commit\"')
-origin = repo.remote(name='origin')
-origin.push(credentials)
+repo.git.push('origin', 'main', env={'GIT_USERNAME': $GIT_USERNAME, 'GIT_PASSWORD': $GIT_PASSWORD})
