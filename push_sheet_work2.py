@@ -7,6 +7,9 @@ REPOSITORY_PATH = '055-master-data'
 
 os.chdir(REPOSITORY_PATH)
 repo = git.Repo()
+repo.config_writter().set_value('user', 'name', 'prj055')
+repo.config_writter().set_value('user', 'email', 'prj055_appsheet@platinumgames.co.jp')
+repo.config_writter().write()
 o = repo.remotes.origin
 o.pull()
 repo.git.add('--all')
