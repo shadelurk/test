@@ -7,7 +7,6 @@ REPOSITORY_PATH = '055-master-data'
 
 os.chdir(REPOSITORY_PATH)
 repo = git.Repo()
-credentials = os.environ['GIT_CREDENTIALS']
 o = repo.remotes.origin
 o.pull()
 repo.git.add('--all')
