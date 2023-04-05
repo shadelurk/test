@@ -14,5 +14,4 @@ repo = git.Repo()
 o = repo.remotes.origin
 o.pull()
 repo.git.add('--all')
-repo.git.commit('.','-m','\"GAS auto commit\"')
 repo.git.push('origin', 'build-egt-master-test', env={'GIT_USERNAME': os.environ['GIT_USERNAME'], 'GIT_PASSWORD': os.environ['GIT_PASSWORD']})
