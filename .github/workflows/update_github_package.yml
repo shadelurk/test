@@ -3,9 +3,7 @@ name: Update Github Package
 on:
   push:
     branches:
-      - master
-    paths:
-      - 'current/bin/**'
+      - main
 
 jobs:
   update-egt-package:
