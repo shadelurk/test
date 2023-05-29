@@ -36,5 +36,5 @@ jobs:
           context: ./
           push: true
           tags: |
-            ghcr.io/shadelurk/egt:latest
-            ghcr.io/shadelurk/egt:${{ steps.tagname.outputs.tagname }}
+            ghcr.io/shadelurk/shiegt:latest
+            ghcr.io/shadelurk/shiegt:${{ steps.tagname.outputs.tagname }}
