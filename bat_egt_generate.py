@@ -1,5 +1,8 @@
 import git
 import os
+import docker
+
+client = docker.from_env()
 
 os.system('pwd')
 os.system('docker-compose --version')
