@@ -38,7 +38,7 @@ def main():
             creds.refresh(Request())
     thread_list = []
     while count < num:
-        print("${count}:{sys.argv[count]}", flush=True)
+        print('%d:%s', count, sys.argv[count], flush=True)
         thread = threading.Thread(target=exec_api, args=(sys.argv[count],creds,))
         thread.start()
         thread_list.append(thread)
