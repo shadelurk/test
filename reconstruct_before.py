@@ -28,8 +28,8 @@ def main():
 
     creds = None
     num = len(sys.argv)
-    count = 2
-    if num < count + 2:
+    count = 3
+    if num < count + 1:
         print("error need parameter ex: python reconstruct_before.py ${MY_TOKEN} 1.2.0 addTest date web version parameter")
     else:
         creds = Credentials.from_authorized_user_file(sys.argv[1], SCOPES)

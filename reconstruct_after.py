@@ -28,7 +28,7 @@ def main():
 
     creds = None
     num = len(sys.argv)
-    count = 1
+    count = 2
     if num < count + 1:
         print("error need parameter ex: python reconstruct_after.py ${MY_TOKEN} addTest date web version parameter", flush=True)
     else:
