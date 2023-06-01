@@ -2,6 +2,7 @@ FROM python:3
 
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip install GitPython
+RUN uname -a
 RUN pip install docker
 RUN yum -y install docker
 RUN curl -SL https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
