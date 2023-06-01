@@ -15,6 +15,13 @@ from googleapiclient.discovery import build
 SCOPES = ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/script.external_request','https://www.googleapis.com/auth/spreadsheets']
 
 def main():
+    count_test = 0
+    num_test = len(sys.argv)
+    print("count_test start")
+    while count_test < num:
+        print(sys.argv[count])
+    print("count_test end")
+
     creds = None
     num = len(sys.argv)
     count = 1
