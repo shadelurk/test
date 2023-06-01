@@ -8,6 +8,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
           sh 'pwd'
+          sh 'find ./'
         }
       }
     }
