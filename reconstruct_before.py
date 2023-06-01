@@ -17,7 +17,8 @@ from googleapiclient.discovery import build
 SCOPES = ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/auth/script.external_request','https://www.googleapis.com/auth/spreadsheets']
 
 def main():
-    echo("test main")
+    print("test main", flush=True)
+
     creds = None
     num = len(sys.argv)
     count = 2
