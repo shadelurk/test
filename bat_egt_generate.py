@@ -2,7 +2,7 @@ import git
 import os
 import docker
 
-client = docker.from_env()
+client = docker.from_env(base_url='unix://var/run/docker.sock')
 client.df()
 client.info()
 client.version()
