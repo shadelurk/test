@@ -7,9 +7,6 @@ pipeline {
     stage('Test') {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-          sh 'apt install docker-ce docker-ce-cli containerd.io'
-          sh 'systemctl start docker'
-          sh 'chmod 666 /var/run/docker.sock'
           sh 'python pull_055_server.py'
           sh 'python bat_egt_generate.py'
         }
