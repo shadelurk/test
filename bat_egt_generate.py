@@ -4,7 +4,7 @@ import docker
 
 client = docker.from_env()
 client.df()
-client.info())
+client.info()
 client.version()
 client.ping()
 
