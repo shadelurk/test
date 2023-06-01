@@ -21,7 +21,9 @@ def main():
     num_test = len(sys.argv)
     print("count_test start", flush=True)
     while count_test < num_test:
+        print(count_test, flush=True)
         print(sys.argv[count_test], flush=True)
+        count_test += 1
     print("count_test end", flush=True)
 
     creds = None
