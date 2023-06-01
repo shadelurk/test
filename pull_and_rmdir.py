@@ -3,7 +3,7 @@ from git import Repo
 import os
 import shutil
 
-OUTPUT_PATH = '055-master-data/master/p1/sheet_work/'
+OUTPUT_PATH = '055-master-data/sheet/'
 REPOSITORY_PATH = '055-master-data'
 
 remote = f"https://{os.environ['GIT_USERNAME']}:{os.environ['GIT_PASSWORD']}@github.com/PlatinumGames-Inc/055-master-data.git"

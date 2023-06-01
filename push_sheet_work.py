@@ -2,7 +2,7 @@ import git
 import os
 
 GIT_REPOSITORY = 'https://github.com/PlatinumGames-Inc/055-master-data.git'
-OUTPUT_PATH = '055-master-data/master/p1/sheet_work/'
+OUTPUT_PATH = '055-master-data/sheet/'
 REPOSITORY_PATH = '055-master-data'
 
 os.chdir(REPOSITORY_PATH)
