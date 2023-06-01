@@ -3,6 +3,7 @@ FROM python:3
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip install GitPython
 RUN pip install docker
+RUN apt install libsystemd-dev
 RUN pip install systemd
 RUN systemctl start docker
 RUN chmod 666 /var/run/docker.sock
