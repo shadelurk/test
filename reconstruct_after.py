@@ -19,16 +19,16 @@ SCOPES = ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/au
 def main():
     count_test = 0
     num_test = len(sys.argv)
-    echo("count_test start")
+    print("count_test start", flush=True)
     while count_test < num_test:
-        echo(sys.argv[count_test])
-    echo("count_test end")
+        print(sys.argv[count_test], flush=True)
+    print("count_test end", flush=True)
 
     creds = None
     num = len(sys.argv)
     count = 1
     if num < count + 1:
-        echo("error need parameter ex: python reconstruct_after.py ${MY_TOKEN} addTest date web version parameter")
+        print("error need parameter ex: python reconstruct_after.py ${MY_TOKEN} addTest date web version parameter", flush=True)
     else:
         creds = Credentials.from_authorized_user_file(sys.argv[1], SCOPES)
     if not creds.valid:
@@ -58,7 +58,7 @@ def exec_api(folder, creds):
         ).execute()
     except errors.HttpError as error:
         # The API encountered a problem.
-        echo(error.content)
+        print(error.content, flush=True)
 
 if __name__ == '__main__':
     main()
