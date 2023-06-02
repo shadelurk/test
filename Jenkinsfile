@@ -7,7 +7,8 @@ pipeline {
     stage('Test') {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-          sh 'python sheet_work_download.py ${MY_TOKEN}'
+          sh 'python reconstruct_before.py ${MY_TOKEN} ${releaseVersion} ${folderName}'
+          sh 'python reconstruct_after.py ${MY_TOKEN} ${folderName}'
         }
       }
     }
