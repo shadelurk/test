@@ -48,7 +48,7 @@ def main():
         for folder in folders:
             if query != '' : query += ' or '
             query += '"' + folder['id'] + '" in parents and mimeType="application/vnd.google-apps.folder"'
-            print('folder:' + folder['id'] + " name:" + folder['name'])
+            print('ck1 folder:' + folder['id'] + " name:" + folder['name'])
         query = '(' + query + ')'
         results = drive.files().list(
             q=query
@@ -61,7 +61,7 @@ def main():
             if query != '' : query += ' or '
             # query += '"' + folder['id'] + '" in parents and trashed != true'
             query += '"' + folder['id'] + '" in parents and mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" and trashed != true'
-            print('folder:' + folder['id'] + " name:" + folder['name'])
+            print('ck2 folder:' + folder['id'] + " name:" + folder['name'])
         for childFolder in childFolders:
             if query != '' : query += ' or '
             # query += '"' + childFolder['id'] + '" in parents and trashed != true'
