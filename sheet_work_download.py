@@ -12,16 +12,14 @@ from google.auth.transport.requests import Request
 from googleapiclient.http import MediaIoBaseDownload
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
-FOLDER_NAME = 'sheet_work'
-OUTPUT_PATH = '055-master-data/master/p1/sheet_work/'
+FOLDER_ID = '1CuA7eUDHLgVJqxdP4YZgX2UseenUSHQi'
+OUTPUT_PATH = '055-master-data/sheet/'
 
 def main():
     # OAuth
     drive = None
     creds = None
     num = len(sys.argv)
-    print(sys.argv[0])
-    print(sys.argv[1])
     if num < 2:
         print("error need parameter ex: python sheet_work_download.py ${MY_TOKEN}")
     else:
@@ -37,9 +35,8 @@ def main():
     folders = None
     if drive: 
         results = drive.files().list(
-            pageSize=100, 
-            fields='nextPageToken, files(id, name)',
-            q='name="' + FOLDER_NAME + '" and mimeType="application/vnd.google-apps.folder"'
+                q = f"'{FOLDER_ID}' in parents",
+                fields="nextPageToken, files(id, name)"
             ).execute()
         folders = results.get('files', [])
         if not folders: print('No folders found.')
