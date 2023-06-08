@@ -1,6 +1,7 @@
 FROM python:3
 
 RUN ls -l /etc
+RUN cat /etc/os-release
 RUN pip install docker
 RUN systemctl start docker
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
