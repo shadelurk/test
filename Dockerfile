@@ -2,7 +2,6 @@ FROM python:3
 
 RUN ls -l /etc
 RUN cat /etc/os-release
-RUN apt-get remove docker docker-engine docker.io containerd runc
 RUN apt-get update
 RUN apt-get install ca-certificates curl gnupg lsb-release
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
