@@ -2,8 +2,8 @@ FROM python:3
 
 RUN ls -l /etc
 RUN cat /etc/os-release
-RUN sudo apt-get update
-RUN sudo apt-get install ca-certificates curl gnupg lsb-release
+RUN apt-get update
+RUN apt-get install ca-certificates curl gnupg lsb-release
 RUN docker version
 RUN ls -l /var/run/
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
