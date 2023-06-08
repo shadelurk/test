@@ -1,5 +1,7 @@
 FROM python:3
 
+RUN yum -y install docker
+RUN systemctl start docker
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip install GitPython
 RUN uname -a
