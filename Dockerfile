@@ -2,6 +2,8 @@ FROM python:3
 
 RUN ls -l /etc
 RUN cat /etc/os-release
+RUN python -V
+RUN python3 -V
 RUN apt-get update
 RUN apt-get install ca-certificates curl gnupg lsb-release
 RUN docker version
