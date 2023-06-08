@@ -2,9 +2,8 @@ FROM python:3
 
 RUN ls -l /etc
 RUN cat /etc/os-release
-RUN apt-get update
-RUN apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-RUN docker run hello-world
+RUN apt -y install docker.io
+RUN docker version
 RUN ls -l /var/run/
 RUN pip install --upgrade pip google-api-python-client google-auth-httplib2 google-auth-oauthlib
 RUN pip install GitPython
