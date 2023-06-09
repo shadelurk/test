@@ -19,7 +19,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/au
 def main():
     creds = None
     num = len(sys.argv)
-    count = 2
+    count = 3
     if num < count + 1:
         print("error need parameter ex: python reconstruct_after.py ${MY_TOKEN} addTest date web version parameter", flush=True)
     else:
@@ -48,7 +48,7 @@ def exec_api(folder, creds):
         }
         response = service.scripts().run(
             body=request,
-            scriptId='AKfycbwQwd_m3oPtbrS_sCjbSzgtK-kp5UCUPRG8_k--SRG8CMg173jRNd6oSiupZ5UFjVdF'
+            scriptId=sys.argv[2]
         ).execute()
     except errors.HttpError as error:
         # The API encountered a problem.

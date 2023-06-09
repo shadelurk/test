@@ -19,7 +19,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive','https://www.googleapis.com/au
 def main():
     creds = None
     num = len(sys.argv)
-    count = 3
+    count = 4
     if num < count + 1:
         print("error need parameter ex: python reconstruct_before.py ${MY_TOKEN} 1.2.0 addTest date web version parameter")
     else:
@@ -30,7 +30,7 @@ def main():
     thread_list = []
     while count < num:
         print('%d:%s', count, sys.argv[count], flush=True)
-        thread = threading.Thread(target=exec_api, args=(sys.argv[2],sys.argv[count],creds,))
+        thread = threading.Thread(target=exec_api, args=(sys.argv[3],sys.argv[count],creds,))
         thread.start()
         thread_list.append(thread)
         count += 1
@@ -48,7 +48,7 @@ def exec_api(version, folder, creds):
         }
         response = service.scripts().run(
             body=request,
-            scriptId='AKfycbwQwd_m3oPtbrS_sCjbSzgtK-kp5UCUPRG8_k--SRG8CMg173jRNd6oSiupZ5UFjVdF'
+            scriptId=sys.argv[2]
         ).execute()
     except errors.HttpError as error:
         # The API encountered a problem.
