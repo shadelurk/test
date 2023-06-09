@@ -5,7 +5,8 @@ GIT_REPOSITORY = 'https://github.com/PlatinumGames-Inc/055-master-data.git'
 OUTPUT_PATH = '055-master-data/sheet/'
 REPOSITORY_PATH = '055-master-data'
 
-os.chdir(REPOSITORY_PATH)os.environ['GIT_AUTHOR_NAME'] = 'PRJ055Jenkins'
+os.chdir(REPOSITORY_PATH)
+os.environ['GIT_AUTHOR_NAME'] = 'PRJ055Jenkins'
 os.environ['GIT_AUTHOR_EMAIL'] = 'prj055_appsheet@platinumgames.co.jp'
 os.environ['GIT_COMMITTER_NAME'] = 'PRJ055Jenkins'
 os.environ['GIT_COMMITTER_EMAIL'] = 'prj055_appsheet@platinumgames.co.jp'
