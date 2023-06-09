@@ -14,7 +14,8 @@ if os.path.exists(REPOSITORY_PATH) != True:
 g = git.cmd.Git(REPOSITORY_PATH)
 g.pull()
 
-shutil.rmtree(OUTPUT_PATH)
+if os.path.exists(OUTPUT_PATH) == True:
+    shutil.rmtree(OUTPUT_PATH)
 os.makedirs(OUTPUT_PATH, exist_ok=True)
 
 
