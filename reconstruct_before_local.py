@@ -65,7 +65,7 @@ def exec_api(version, folder, creds):
         }
         response = service.scripts().run(
             body=request,
-            scriptId='AKfycbzDyTydwtKQKKzvOiUXAGouZzhfuiOUg3QH2ORpPgmD5u1BO8qgWMx5UddmMNqx_Kfq'
+            scriptId='AKfycbw5a0dbQilBVuReCtR-YLMh0tbSkUiP7U6R5Y-ugDOMe4XxtNbf-Q3r4uPgHUglhSp2'
         ).execute()
     except errors.HttpError as error:
         # The API encountered a problem.
