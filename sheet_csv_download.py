@@ -13,7 +13,7 @@ from googleapiclient.http import MediaIoBaseDownload
 
 SCOPES = ['https://www.googleapis.com/auth/drive']
 FOLDER_ID = '1Xu8vMYSV0J57hAXaK1fFmNLlU4861dvs'
-OUTPUT_PATH = '/'
+OUTPUT_PATH = './'
 
 def main():
     # OAuth
