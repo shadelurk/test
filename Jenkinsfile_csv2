@@ -15,7 +15,7 @@ pipeline {
   post {
      success {
           dir(workdir) {
-              slackSend channel: "${slackchannedid}", color:'#00FF00', iconEmoji: ':jenkins:', message: "${JOB_NAME} - #${BUILD_NUMBER} Success (<${RUN_DISPLAY_URL}|Open>)\n*creating fleet*\ns3: ${s3uri}\nrevision: ${REV}\nname: ${FLEET_NAME}\nfleet-id: ${FLEET_ID}\ninstance: ${instancetype} ${fleettype}\n${description}", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'
+              slackSend channel: "${slackchannedid}", color:'#00FF00', iconEmoji: ':jenkins:', message: "test", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'
               cleanWs()
           }
      }
