@@ -1,0 +1,27 @@
+pipeline {
+  agent { dockerfile true }
+  environment {
+      MY_TOKEN = credentials('TOKEN')
+      slackchannedid='C05CM8J1MQT'
+  }
+  stages {
+    stage('Test') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
+        }
+      }
+    }
+  }
+  post {
+     success {
+          dir(workdir) {
+              slackSend channel: "${slackchannedid}", color:'#00FF00', iconEmoji: ':jenkins:', message: "${JOB_NAME} - #${BUILD_NUMBER} Success (<${RUN_DISPLAY_URL}|Open>)\n*creating fleet*\ns3: ${s3uri}\nrevision: ${REV}\nname: ${FLEET_NAME}\nfleet-id: ${FLEET_ID}\ninstance: ${instancetype} ${fleettype}\n${description}", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'
+              cleanWs()
+          }
+     }
+     failure {
+          slackSend channel: "${slackchannedid}", color:'#FF0000', iconEmoji: ':jenkins:', message: "${JOB_NAME} - #${BUILD_NUMBER} Failed (<${RUN_DISPLAY_URL}|Open>)", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'            
+          cleanWs()
+     }
+  }
+}
