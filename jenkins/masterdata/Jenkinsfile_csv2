@@ -1,5 +1,7 @@
 pipeline {
-  agent { dockerfile true }
+  agent { 
+    dockerfile { filename 'jenkins/masterdata/Dockerfile' }
+  }
   environment {
       MY_TOKEN = credentials('TOKEN')
       slackchannedid='C05CM8J1MQT'
