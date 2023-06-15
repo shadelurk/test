@@ -14,14 +14,10 @@ pipeline {
   }
   post {
      success {
-          dir(workdir) {
-              slackSend channel: "${slackchannedid}", color:'#00FF00', iconEmoji: ':jenkins:', message: "test", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'
-              cleanWs()
-          }
+          slackSend channel: "${slackchannedid}", color:'#00FF00', iconEmoji: ':jenkins:', message: "test", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'
      }
      failure {
           slackSend channel: "${slackchannedid}", color:'#FF0000', iconEmoji: ':jenkins:', message: "${JOB_NAME} - #${BUILD_NUMBER} Failed (<${RUN_DISPLAY_URL}|Open>)", teamDomain: 'https://platinumgames.slack.com', tokenCredentialId: 'SlackToken', username: 'Jenkins'            
-          cleanWs()
      }
   }
 }
