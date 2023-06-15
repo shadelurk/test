@@ -9,8 +9,8 @@ pipeline {
     stage('Test') {
       steps {
         withCredentials([usernamePassword(credentialsId: '055build', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-          sh 'python reconstruct_before.py ${MY_TOKEN} ${scriptId} ${releaseVersion} ${folderName}'
-          sh 'python reconstruct_csv.py ${MY_TOKEN} ${scriptId} ${folderName}'
+          sh 'python jenkins/masterdata/reconstruct_before.py ${MY_TOKEN} ${scriptId} ${releaseVersion} ${folderName}'
+          sh 'python jenkins/masterdata/reconstruct_csv.py ${MY_TOKEN} ${scriptId} ${folderName}'
         }
       }
     }
